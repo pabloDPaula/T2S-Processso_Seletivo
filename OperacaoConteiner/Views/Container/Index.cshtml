@@ -1,0 +1,51 @@
+﻿@model List<ContainerModel>
+@{
+    ViewData["Title"] = "Gerenciamento de Container";
+}
+
+<div class="text-center">
+    <h2 class="display-4">Lista de Containers</h2>
+
+    <br />
+    <div class="text-left">
+       <a asp-controller="Container" asp-action="Cadastrar" class="btn btn-success">Novo Container</a>
+    </div>
+    <br />
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Numero</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Status</th>
+      <th scope="col">Categoria</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+      @if(Model != null && Model.Any())
+      {
+          foreach (ContainerModel container in Model)
+          {
+             <tr>
+                 <th scope="row">@container.Id</th>
+                 <td>@container.nomeCliente</td>
+                 <td>@container.numeroContainer</td>
+                 <td>@container.tipoContainer</td>
+                 <td>@container.statusContainer</td>
+                 <td>@container.categoriaContainer</td>
+                 <td>
+                     <div class="text-center">
+                         <a class="btn btn-primary" asp-action="Editar" asp-route-id="@container.Id">Editar</a>
+                         <a class="btn btn-danger"  asp-action="ApagarConfirmacao" asp-route-id="@container.Id">Apagar</a>
+                     </div>
+                 </td>
+             </tr>
+          }
+      }
+  </tbody>
+</table>
+
+</div>

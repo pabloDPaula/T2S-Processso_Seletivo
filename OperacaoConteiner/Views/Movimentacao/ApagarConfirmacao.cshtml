@@ -1,0 +1,10 @@
+﻿@model MovimentacaoModel
+@{
+    ViewData["Title"] = "Confirmação de apagar Movimentação";
+}
+
+<div class="text-center">
+    <h3>Realmente deseja apagar essa movimentação??</h3>
+    <a class="btn btn-primary" asp-controller="Movimentacao" asp-action="apagar" asp-route-id="@Model.Id" role="button" >Apagar</a>
+    <a class="btn btn-secondary" asp-controller="Movimentacao" asp-action="index" role="button" >Voltar</a>
+</div>

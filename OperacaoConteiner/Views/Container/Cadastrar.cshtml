@@ -1,0 +1,34 @@
+﻿@using OperacaoConteiner.Models.Enums
+@model ContainerModel
+@{
+    ViewData["Title"] = "Cadastrar Container";
+}
+
+<div class="text-center">
+    <h1>Cadastro de Container</h1>
+</div>
+
+<form asp-controller="Container" asp-action="Cadastrar" method="post">
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text" asp-for="nomeCliente" class="form-control" id="nome" placeholder="Digite o nome do container">
+  </div>
+  <div class="form-group">
+    <label for="nome">Numero</label>
+    <input type="text" asp-for="numeroContainer" class="form-control" id="numero" placeholder="GHJN1234567" maxlength = "11">
+  </div>
+  <div class="form-group">
+    <label for="nome">Tipo</label>
+    <select asp-for="tipoContainer" class="form-control" id="tipo"  asp-items="@(new SelectList(Enum.GetValues(typeof(TipoContainer))))"></select>
+  </div>
+  <div class="form-group">
+    <label for="nome">Status</label>
+    <select asp-for="statusContainer" class="form-control" id="status"   asp-items="@(new SelectList(Enum.GetValues(typeof(StatusContainer))))"></select>
+  </div>
+  <div class="form-group">
+    <label for="nome">Categoria</label>
+    <select asp-for="categoriaContainer" class="form-control" id="categoria" asp-items="@(new SelectList(Enum.GetValues(typeof(CategoriaContainer))))"></select>
+  </div>
+  <button type="submit" class="btn btn-success">Adicionar</button>
+  <a class="btn btn-secondary" asp-controller="Container" asp-action="index" role="button" >Voltar</a>
+</form>

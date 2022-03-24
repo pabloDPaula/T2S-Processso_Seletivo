@@ -1,0 +1,10 @@
+﻿@model ContainerModel
+@{
+    ViewData["Title"] = "Confirmação de apagar Container";
+}
+
+<div class="text-center">
+    <h3>Realmente deseja apagar esse container?? @Model.nomeCliente</h3>
+    <a class="btn btn-primary" asp-controller="Container" asp-action="apagar" asp-route-id="@Model.Id" role="button" >Apagar</a>
+    <a class="btn btn-secondary" asp-controller="Container" asp-action="index" role="button" >Voltar</a>
+</div>

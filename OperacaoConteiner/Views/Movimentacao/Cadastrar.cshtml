@@ -1,0 +1,37 @@
+﻿@using OperacaoConteiner.Models.Enums
+
+@model MovimentacaoContainerModel
+@{
+    ViewData["Title"] = "Cadastrar Movimentação";
+}
+
+<div class="text-center">
+    <h1>Cadastro de Movimentação</h1>
+</div>
+<form asp-controller="Movimentacao" asp-action="Cadastrar" method="post">
+  <div class="form-group">
+    <label asp-for="@Model.movimentacao.tipoMovimentação">Tipo</label>
+    <select asp-for="@Model.movimentacao.tipoMovimentação" class="form-control" id="tipo"  asp-items="@(new SelectList(Enum.GetValues(typeof(TipoMovimentacao))))"></select>
+  </div>
+  <div class="form-group">
+    <label asp-for="@Model.movimentacao.DataInicio">Data de Inicio</label>
+    <input asp-for="@Model.movimentacao.DataInicio" class="form-control" id="dataInicio">
+  </div>
+   <div class="form-group">
+    <label asp-for="@Model.movimentacao.DataFim">Data do término</label>
+    <input asp-for="@Model.movimentacao.DataFim" class="form-control" id="dataFim">
+  </div>
+  <div class="form-group">
+    <label asp-for="@Model.movimentacao.IdContainer">Cliente</label>
+    <select asp-for="@Model.movimentacao.IdContainer" class="form-control" id="idCliente">
+        @{
+            foreach (ContainerModel container in @Model.todosContainer)
+            {
+                <option value="@container.Id">@container.nomeCliente</option>
+            }
+        }
+    </select>
+  </div>
+  <button type="submit" class="btn btn-success">Adicionar</button>
+  <a class="btn btn-secondary" asp-controller="Movimentacao" asp-action="index" role="button" >Voltar</a>
+</form>

@@ -1,0 +1,50 @@
+﻿@model List<MovimentacaoModel>
+@{
+    ViewData["Title"] = "Gerenciamento de Movimentacao";
+}
+
+<div class="text-center">
+    <h2 class="display-4">Lista de Movimentacao</h2>
+
+    <br />
+    <div class="text-left">
+       <a asp-controller="Movimentacao" asp-action="Cadastrar" class="btn btn-success">Nova Movimentação</a>
+    </div>
+    <br />
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Tipo Movimentação</th>
+      <th scope="col">Data de inicio</th>
+      <th scope="col">Data de fim</th>
+      <th scope="col">Id do Cliente</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody> 
+      @if(Model != null && Model.Any())
+      {
+          foreach (MovimentacaoModel movimentacao in Model)
+          {
+             <tr>
+                 <th scope="row">@movimentacao.Id</th>
+                 <td>@movimentacao.tipoMovimentação</td>
+                 <td>@movimentacao.DataInicio</td>
+                 <td>@movimentacao.DataFim</td>
+                 <td>@movimentacao.IdContainer</td>
+                 <td>
+                     <div class="text-center">
+                         <a class="btn btn-primary" asp-action="Editar" asp-route-id="@movimentacao.Id">Editar</a>
+                         <a class="btn btn-danger"  asp-action="ApagarConfirmacao" asp-route-id="@movimentacao.Id">Apagar</a>
+                         <a class="btn btn-info"  asp-action="maisDetalhes" asp-route-id="@movimentacao.IdContainer">Detalhes</a>
+                     </div>
+                 </td>
+             </tr>
+          }
+      }
+  </tbody>
+</table>
+
+</div>
