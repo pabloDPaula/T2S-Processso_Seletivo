@@ -25,8 +25,17 @@ namespace OperacaoConteiner.Controllers
         [HttpPost]
         public IActionResult Cadastrar(ContainerModel container)
         {
-            _containerRepositorio.Adicionar(container);
-            return RedirectToAction("Index");
+            try
+            {
+                TempData["mensagemSucesso"] = "Container cadastrado com sucesso!!";
+                _containerRepositorio.Adicionar(container);
+                return RedirectToAction("Index");
+            }
+            catch (System.Exception erro)
+            {
+                TempData["mensagemErro"] = "Ops, Erro ao cadastrar o container, tente novamente mais tarde!!, mais detalhes:"+erro.Message;
+                return RedirectToAction("Index");
+            }
         }
 
         public IActionResult Editar(int id)

@@ -31,8 +31,17 @@ namespace OperacaoConteiner.Controllers
         [HttpPost]
         public IActionResult Cadastrar(MovimentacaoModel movimentacao)
         {
-            _movimentacaoRepositorio.Adicionar(movimentacao);
-            return RedirectToAction("Index");
+            try
+            {
+                TempData["mensagemSucesso"] = "Movimentação cadastrada com sucesso!!";
+                _movimentacaoRepositorio.Adicionar(movimentacao);
+                return RedirectToAction("Index");
+            }
+            catch (System.Exception erro)
+            {
+                TempData["mensagemErro"] = "Ops, Erro ao cadastrar a movimentação, tente novamente mais tarde!!, mais detalhes:" + erro.Message;
+                return RedirectToAction("Index");
+            }
         }
 
         public IActionResult Editar(int id)

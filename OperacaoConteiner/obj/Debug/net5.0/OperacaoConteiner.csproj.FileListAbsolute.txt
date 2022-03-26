@@ -385,10 +385,10 @@ C:\Users\pablo\Desktop\OperacaoConteiner\OperacaoConteiner\obj\Debug\net5.0\Oper
 C:\Users\pablo\Desktop\OperacaoConteiner\OperacaoConteiner\obj\Debug\net5.0\ref\OperacaoConteiner.dll
 C:\Users\pablo\Desktop\OperacaoConteiner\OperacaoConteiner\obj\Debug\net5.0\Razor\Views\Container\Index.cshtml.g.cs
 C:\Users\pablo\Desktop\OperacaoConteiner\OperacaoConteiner\obj\Debug\net5.0\Razor\Views\Container\Cadastrar.cshtml.g.cs
-C:\Users\pablo\Desktop\OperacaoConteiner\OperacaoConteiner\obj\Debug\net5.0\Razor\Views\Container\ApagarConfirmação.cshtml.g.cs
 C:\Users\pablo\Desktop\OperacaoConteiner\OperacaoConteiner\obj\Debug\net5.0\Razor\Views\Container\Editar.cshtml.g.cs
 C:\Users\pablo\Desktop\OperacaoConteiner\OperacaoConteiner\obj\Debug\net5.0\Razor\Views\Movimentacao\Index.cshtml.g.cs
 C:\Users\pablo\Desktop\OperacaoConteiner\OperacaoConteiner\obj\Debug\net5.0\Razor\Views\Movimentacao\Cadastrar.cshtml.g.cs
 C:\Users\pablo\Desktop\OperacaoConteiner\OperacaoConteiner\obj\Debug\net5.0\Razor\Views\Movimentacao\Editar.cshtml.g.cs
 C:\Users\pablo\Desktop\OperacaoConteiner\OperacaoConteiner\obj\Debug\net5.0\Razor\Views\Movimentacao\ApagarConfirmacao.cshtml.g.cs
 C:\Users\pablo\Desktop\OperacaoConteiner\OperacaoConteiner\obj\Debug\net5.0\Razor\Views\Movimentacao\maisDetalhes.cshtml.g.cs
+C:\Users\pablo\Desktop\OperacaoConteiner\OperacaoConteiner\obj\Debug\net5.0\Razor\Views\Container\ApagarConfirmacao.cshtml.g.cs

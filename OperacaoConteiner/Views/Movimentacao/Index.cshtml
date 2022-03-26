@@ -11,7 +11,22 @@
        <a asp-controller="Movimentacao" asp-action="Cadastrar" class="btn btn-success">Nova Movimentação</a>
     </div>
     <br />
+    @if(@TempData["mensagemSucesso"] != null)
+    {
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+       @TempData["mensagemSucesso"]
+       <button type="button" class="close" data-dismiss="alert">×</button>
+    </div>
+    }
 
+
+    @if(@TempData["mensagemErro"] != null)
+    {
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+         <button type="button" class="close" data-dismiss="alert">×</button>
+    </div>    
+    }
     <table class="table">
   <thead>
     <tr>
